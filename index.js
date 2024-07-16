@@ -36,46 +36,16 @@ function submit() {
             res.push(`"date": "${date.value}"`) 
         };
         if(options.value){
-            res.push(`"password": "${options.value}"`) 
+            res.push(`"password": ["${options.value}"]`) 
         }
     }
-    console.log(result.innerHTML);
-    // if(emailInp.value){
-    //     res.push(`"email": "${emailInp.value}"`)
-    // } 
-    // if(passwordInp.value){
-    //     res.push(`"password": "${passwordInp.value}"`) 
-    // }
-    // if(date.value){
-    //     res.push(`"date": "${date.value}"`) 
-    // };
-    // if(options.value){
-    //     res.push(`"password": "${options.value}"`) 
-    // }
     result.innerHTML = `{${res}}`
-    // console.log(emailInp.value);
-    // console.log(res);
 }
-// form.addEventListener('submit', e => {
-//     e.preventDefault();
 
-//     validateInputs()
-// });
-
-// function validateInputs() {
-//     const emailValue = emailInp.value
-//     const emailPattern = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
-//     if(emailValue == ''){
-//         result.innerHTML = 'Email is required';
-//         result.style.color = 'red'
-//         return false
-//     } else if(!emailPattern.test(emailValue)){
-//         result.innerHTML = 'input correct email';
-//     } else{
-//         result = ''
-//     }
-
-// }
-///^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
-///^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+function reset(){
+    emailInp.value = '';
+    passwordInp.value = '';
+    date.value = '';
+    options.value = ''   
+};
  
